@@ -1,5 +1,4 @@
 mklink %HOME%\.vimrc %HOME%\dots\.vimrc
-mklink %HOME%\_vimrc %HOME%\dots\_vimrc
 mklink %HOME%\.gvimrc %HOME%\dots\.gvimrc
 mklink %HOME%\.bash_profile %HOME%\dots\.bash_profile
 mklink %HOME%\.bashrc %HOME%\dots\.bashrc
