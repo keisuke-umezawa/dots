@@ -55,7 +55,6 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundleLazy 'rhysd/vim-clang-format', {
     \ 'autoload' : {'filetypes' : ['c', 'cpp', 'objc']}
     \ }
-NeoBundleLazy 'kana/vim-altr'
 call neobundle#end()
 
 """"""""""""""""""""""""""""""
@@ -93,6 +92,11 @@ au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
 """"""""""""""""""""""""""""""
+" vim-altr property
+""""""""""""""""""""""""""""""
+nnoremap <C-K><C-O> <Plug>(altr-forward)
+
+""""""""""""""""""""""""""""""
 " clang_format property
 """"""""""""""""""""""""""""""
 let g:clang_format#code_style = 'WebKit'
@@ -116,6 +120,7 @@ let g:clang_format#style_options = {
             \ 'Standard' : 'C++11',
             \ }
 autocmd FileType c,cpp,objc vnoremap <C-K><C-F> :ClangFormat<CR>
+autocmd FileType c,cpp,objc nnoremap <C-K><C-F> :ClangFormat<CR>
 
 filetype plugin indent on     " required!
 filetype indent on
