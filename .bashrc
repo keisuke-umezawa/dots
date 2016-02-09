@@ -1,2 +1,5 @@
 alias vi='gvim'
 alias rails='rails.bat'
+alias grep='grep -E'
+alias sed='sed -r'
+alias awk='gawk --posix'
