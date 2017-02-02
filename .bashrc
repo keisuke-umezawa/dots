@@ -19,3 +19,6 @@ fi
 #alias grep='grep -E'
 #alias sed='sed -r'
 #alias awk='gawk --posix'
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
