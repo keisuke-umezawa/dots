@@ -12,5 +12,7 @@ ln -sf ${DOTFILES_DIR}/.vimrc ~/.vimrc
 if [ ! -L ~/.vim ]; then
 	rm -rf ~/.vim
 fi
-ln -snf ${DOTFILES_DIR}/.vim/ ~/.vim
+#ln -snf ${DOTFILES_DIR}/.vim/ ~/.vim
+mkdir -p ~/.vim/bundle/
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
