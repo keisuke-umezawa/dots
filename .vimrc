@@ -63,6 +63,7 @@ NeoBundleLazy 'NigoroJr/rsense', {
     \ 'filetypes': 'ruby',
     \ },
     \ }
+NeoBundle 'kana/vim-filetype-haskell'
 call neobundle#end()
 
 """"""""""""""""""""""""""""""
