@@ -64,6 +64,8 @@ NeoBundleLazy 'NigoroJr/rsense', {
     \ },
     \ }
 NeoBundle 'kana/vim-filetype-haskell'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'rust-lang/rust.vim'
 call neobundle#end()
 
 """"""""""""""""""""""""""""""
@@ -172,6 +174,11 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " rsence property
 """"""""""""""""""""""""""""""
 let g:rsenseUseOmniFunc = 1
+
+""""""""""""""""""""""""""""""
+" rust setting
+""""""""""""""""""""""""""""""
+let g:rustfmt_autosave = 1 
 
 filetype plugin indent on     " required!
 filetype indent on
