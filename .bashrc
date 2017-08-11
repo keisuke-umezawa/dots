@@ -26,15 +26,3 @@ alias objdump='objdump -M'
 if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
 fi
-
-# for pyenv
-#export PYENV_ROOT="$HOME/.pyenv"
-#PATH=$PYENV_ROOT/bin:$PATH
-#PATH=$PATH:$HOME/bin
-#export PATH
-#eval "$(pyenv init -)"
-
-# for cuDNN
-#export LD_LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LD_LIBRARY_PATH
-#export CPATH=~/.cudnn/active/cuda/include:$CPATH
-#export LIBRARY_PATH=~/.cudnn/active/cuda/lib64:$LIBRARY_PATH
