@@ -6,6 +6,7 @@ DOTFILES_DIR=$(cd $(dirname $0) && pwd)
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 ln -sf ${DOTFILES_DIR}/.bash_profile ~/.bash_profile
 ln -sf ${DOTFILES_DIR}/.bashrc ~/.bashrc
+ln -sf ${DOTFILES_DIR}/.profile ~/.profile
 
 # vim settings
 ln -sf ${DOTFILES_DIR}/.vimrc ~/.vimrc
