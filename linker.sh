@@ -7,6 +7,7 @@ wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 ln -sf ${DOTFILES_DIR}/.bash_profile ~/.bash_profile
 ln -sf ${DOTFILES_DIR}/.bashrc ~/.bashrc
 ln -sf ${DOTFILES_DIR}/.profile ~/.profile
+ln -sf ${DOTFILES_DIR}/.tmux.conf ~/.tmux.conf
 
 # vim settings
 ln -sf ${DOTFILES_DIR}/.vimrc ~/.vimrc
