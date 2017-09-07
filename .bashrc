@@ -28,7 +28,6 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # forward agent with tmux
-
 agent="$HOME/.ssh/agent"
 if [ -S "$SSH_AUTH_SOCK" ]; then
     case $SSH_AUTH_SOCK in
@@ -40,3 +39,4 @@ elif [ -S $agent ]; then
 else
     echo "no ssh-agent"
 fi
+

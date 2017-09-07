@@ -17,3 +17,9 @@ export PATH=/usr/local/cuda-8.0/bin:$PATH
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# ~/bin
+path=$HOME/bin
+if [ -d $path ]; then
+    export PATH=$PATH:$path
+fi
