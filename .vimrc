@@ -13,6 +13,8 @@ set showmode
 set clipboard=unnamed,autoselect
 let lisp_rainbow=1
 set number
+set backspace=indent,eol,start
+set background=dark
 
 set encoding=utf-8
 
