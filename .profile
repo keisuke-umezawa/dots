@@ -18,3 +18,8 @@
 #export GOPATH=$HOME/.go
 #export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
+# ~/bin
+path=$HOME/bin
+if [ -d $path ]; then
+    export PATH=$PATH:$path
+fi

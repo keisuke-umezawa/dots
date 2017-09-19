@@ -28,24 +28,27 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 # forward agent with tmux
-#agent="$HOME/.ssh/agent"
-#if [ -S "$SSH_AUTH_SOCK" ]; then
-#    case $SSH_AUTH_SOCK in
-#    /tmp/*/agent.[0-9]*)
-#        ln -snf "$SSH_AUTH_SOCK" $agent && export SSH_AUTH_SOCK=$agent
-#    esac
-#elif [ -S $agent ]; then
-#    export SSH_AUTH_SOCK=$agent
-#else
-#    echo "no ssh-agent"
-#fi
+agent="$HOME/.ssh/agent"
+if [ -S "$SSH_AUTH_SOCK" ]; then
+    case $SSH_AUTH_SOCK in
+    /tmp/*/agent.[0-9]*)
+        ln -snf "$SSH_AUTH_SOCK" $agent && export SSH_AUTH_SOCK=$agent
+    esac
+elif [ -S $agent ]; then
+    export SSH_AUTH_SOCK=$agent
+else
+    echo "no ssh-agent"
+fi
 
 ## yjs
+PS1_COLOR_BEGIN="\[\e[1;32m\]"
+PS1_COLOR_END="\[\e[m\]"
 if [ "x$YROOT_NAME" != "x" ]; then
-  PS1='[\u@\H:$YROOT_NAME \w]\n\$ '
+  export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h:$YROOT_NAME \W]\\$ "
 else
-  PS1='[\u@\H \w]\n\$ '
+  export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h \W]\\$ "
 fi
+
 alias vim=~/bin/vim
 export USE_CCACHE=1
 export CCACHE_DIR=~/tmp/.ccache
