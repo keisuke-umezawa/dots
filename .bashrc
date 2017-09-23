@@ -40,7 +40,6 @@ else
     echo "no ssh-agent"
 fi
 
-## yjs
 PS1_COLOR_BEGIN="\[\e[1;32m\]"
 PS1_COLOR_END="\[\e[m\]"
 if [ "x$YROOT_NAME" != "x" ]; then
@@ -49,9 +48,9 @@ else
   export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h \W]\\$ "
 fi
 
-alias vim=~/bin/vim
-export USE_CCACHE=1
-export CCACHE_DIR=~/tmp/.ccache
-export YJS_HOME=~/dev/yjs
-export YJS_LOG_DIR=~/dev/yjs_log
-export YJS_CONF_DIR=~/dev/yjs/core/tests/helper/etc/
+#alias vim=~/bin/vim
+#export USE_CCACHE=1
+#export CCACHE_DIR=~/tmp/.ccache
+#export YJS_HOME=~/dev/yjs
+#export YJS_LOG_DIR=~/dev/yjs_log
+#export YJS_CONF_DIR=~/dev/yjs/core/tests/helper/etc/
