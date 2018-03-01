@@ -66,7 +66,7 @@ NeoBundleLazy 'NigoroJr/rsense', {
     \ },
     \ }
 NeoBundle 'kana/vim-filetype-haskell'
-NeoBundle 'rking/ag.vim'
+NeoBundle 'jremmen/vim-ripgrep'
 NeoBundle 'rust-lang/rust.vim'
 call neobundle#end()
 
