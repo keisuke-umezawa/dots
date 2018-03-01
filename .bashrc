@@ -54,3 +54,5 @@ fi
 #export YJS_HOME=~/dev/yjs
 #export YJS_LOG_DIR=~/dev/yjs_log
 #export YJS_CONF_DIR=~/dev/yjs/core/tests/helper/etc/
+
+clipper &
