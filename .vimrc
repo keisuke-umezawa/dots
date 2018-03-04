@@ -48,9 +48,6 @@ NeoBundle 'Shougo/vimproc', {
   \ },
   \ }
 NeoBundle 'gabrielelana/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'vim-scripts/vim-auto-save'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/neocomplcache.vim'

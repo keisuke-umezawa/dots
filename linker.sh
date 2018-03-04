@@ -18,3 +18,7 @@ fi
 mkdir -p ~/.vim/bundle/
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
+if [ -L ~/.vim ]; then
+    mkdir -p ~/bin
+fi
+cp ${DOTFILES_DIR}/bin/* ~/bin/
