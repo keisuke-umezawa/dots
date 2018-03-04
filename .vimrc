@@ -21,6 +21,8 @@ set backspace=indent,eol,start
 set background=dark
 
 set encoding=utf-8
+let mapleader = ','
+
 
 augroup vimrc
 autocmd! FileType html setlocal sw=2  ts=2
@@ -69,6 +71,7 @@ NeoBundleLazy 'NigoroJr/rsense', {
 NeoBundle 'kana/vim-filetype-haskell'
 NeoBundle 'jremmen/vim-ripgrep'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'davidhalter/jedi-vim'
 call neobundle#end()
 
 """"""""""""""""""""""""""""""
