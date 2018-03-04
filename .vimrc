@@ -72,6 +72,7 @@ NeoBundle 'kana/vim-filetype-haskell'
 NeoBundle 'jremmen/vim-ripgrep'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'kevinw/pyflakes-vim'
 call neobundle#end()
 
 """"""""""""""""""""""""""""""
