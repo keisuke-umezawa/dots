@@ -11,14 +11,18 @@ ln -sf ${DOTFILES_DIR}/.tmux.conf ~/.tmux.conf
 
 # vim settings
 ln -sf ${DOTFILES_DIR}/.vimrc ~/.vimrc
-if [ ! -L ~/.vim ]; then
+if [ -e ~/.vim ]; then
 	rm -rf ~/.vim
 fi
-#ln -snf ${DOTFILES_DIR}/.vim/ ~/.vim
 mkdir -p ~/.vim/bundle/
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
-if [ -L ~/.vim ]; then
+if [ ! -e ~/bin ]; then
     mkdir -p ~/bin
 fi
 cp ${DOTFILES_DIR}/bin/* ~/bin/
+
+# setup pyenv
+if [ ! -e ~/.pyenv ]; then
+    git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+fi

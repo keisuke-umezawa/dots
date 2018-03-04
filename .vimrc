@@ -1,15 +1,19 @@
 filetype on
 filetype plugin on
 syntax on
+set autoread
 set cindent
 set ts=4
 set sw=4
 set expandtab
 set hlsearch
+set noswapfile
+set hidden
 set showmatch
 set title
 set ruler
 set showmode
+set smartindent
 set clipboard=unnamed,autoselect
 let lisp_rainbow=1
 set number
@@ -68,12 +72,6 @@ NeoBundle 'rust-lang/rust.vim'
 call neobundle#end()
 
 """"""""""""""""""""""""""""""
-" previm property
-""""""""""""""""""""""""""""""
-au BufRead,BufNewFile *.md set filetype=markdown
-let g:previm_open_cmd = 'chrome'
-
-""""""""""""""""""""""""""""""
 " vim-markdown property
 """"""""""""""""""""""""""""""
 let g:markdown_enable_spell_checking = 0
@@ -100,11 +98,6 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
-""""""""""""""""""""""""""""""
-" vim-altr property
-""""""""""""""""""""""""""""""
-nnoremap <C-K><C-O> <Plug>(altr-forward)
 
 """"""""""""""""""""""""""""""
 " clang_format property
@@ -135,7 +128,6 @@ autocmd FileType c,cpp,objc nnoremap <C-K><C-F> :ClangFormat<CR>
 """"""""""""""""""""""""""""""
 " neocomplcache property
 """"""""""""""""""""""""""""""
-
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -183,3 +175,36 @@ filetype plugin indent on     " required!
 filetype indent on
 syntax on
 NeoBundleCheck
+
+" autopep 
+" original http://stackoverflow.com/questions/12374200/using-uncrustify-with-vim/15513829#15513829
+function! Preserve(command)
+    " Save the last search.
+    let search = @/
+    " Save the current cursor position.
+    let cursor_position = getpos('.')
+    " Save the current window position.
+    normal! H
+    let window_position = getpos('.')
+    call setpos('.', cursor_position)
+    " Execute the command.
+    execute a:command
+    " Restore the last search.
+    let @/ = search
+    " Restore the previous window position.
+    call setpos('.', window_position)
+    normal! zt
+    " Restore the previous cursor position.
+    call setpos('.', cursor_position)
+endfunction
+
+function! Autopep8()
+    "--ignote=E501: 一行の長さの補正を無視"
+    call Preserve(':silent %!autopep8 --ignore=E501 -')
+endfunction
+
+" Shift + F でautopep自動修正
+nnoremap <S-f> :call Autopep8()<CR>
+
+" 自動保存
+autocmd BufWrite *.{py} :call Autopep8()

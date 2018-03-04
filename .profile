@@ -3,7 +3,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
-    # eval "$(pyenv virtualenv-init -)"
+    #eval "$(pyenv virtualenv-init -)"
 fi
 
 # for cuDNN
@@ -22,3 +22,6 @@ path=$HOME/bin
 if [ -d $path ]; then
     export PATH=$PATH:$path
 fi
+
+# custome
+export PATH='/home/keisuke-umezawa/.linuxbrew/bin:/home/keisuke-umezawa/.linuxbrew/sbin':"$PATH"
