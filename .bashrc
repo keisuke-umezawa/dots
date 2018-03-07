@@ -47,7 +47,3 @@ if [ "x$YROOT_NAME" != "x" ]; then
 else
   export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h \W]\\$ "
 fi
-
-
-# Only for mac
-#clipper &
