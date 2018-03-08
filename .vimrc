@@ -71,6 +71,7 @@ NeoBundleLazy 'NigoroJr/rsense', {
 NeoBundle 'kana/vim-filetype-haskell'
 NeoBundle 'jremmen/vim-ripgrep'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'plytophogy/vim-virtualenv'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'kevinw/pyflakes-vim'
 call neobundle#end()
@@ -175,6 +176,11 @@ let g:rsenseUseOmniFunc = 1
 """"""""""""""""""""""""""""""
 let g:rustfmt_autosave = 1 
 
+""""""""""""""""""""""""""""""
+" pyflakes-vim settings
+""""""""""""""""""""""""""""""
+let g:pyflakes_use_quickfix = 0
+
 filetype plugin indent on     " required!
 filetype indent on
 syntax on
@@ -209,6 +215,3 @@ endfunction
 
 " Shift + F でautopep自動修正
 nnoremap <S-f> :call Autopep8()<CR>
-
-" 自動保存
-autocmd BufWrite *.{py} :call Autopep8()
