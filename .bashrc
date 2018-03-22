@@ -40,10 +40,4 @@ else
     echo "no ssh-agent"
 fi
 
-PS1_COLOR_BEGIN="\[\e[1;32m\]"
-PS1_COLOR_END="\[\e[m\]"
-if [ "x$YROOT_NAME" != "x" ]; then
-  export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h:$YROOT_NAME \W]\\$ "
-else
-  export PS1="[${PS1_COLOR_BEGIN}\u${PS1_COLOR_END}@\h \W]\\$ "
-fi
+PS1='\[\ek\e\\\][\u@\h \W]\$ '
