@@ -40,4 +40,4 @@ else
     echo "no ssh-agent"
 fi
 
-PS1="[\\u@\\h:\\w]$ "
+PS1="\\[\\e[36m\\][\\u@\\h]\\[\\e[0m\\]\\n\\$ "
