@@ -22,6 +22,13 @@ alias vi='vim'
 # for debug
 alias objdump='objdump -M'
 
+# for dstat
+alias dstat-full='dstat -Tclmdrn'
+alias dstat-mem='dstat -Tclm'
+alias dstat-cpu='dstat -Tclr'
+alias dstat-net='dstat -Tclnd'
+alias dstat-disk='dstat -Tcldr'
+
 # git completion
 if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
