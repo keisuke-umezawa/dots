@@ -34,17 +34,5 @@ if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
 fi
 
-# forward agent with tmux
-agent="$HOME/.ssh/agent"
-if [ -S "$SSH_AUTH_SOCK" ]; then
-    case $SSH_AUTH_SOCK in
-    /tmp/*/agent.[0-9]*)
-        ln -snf "$SSH_AUTH_SOCK" $agent && export SSH_AUTH_SOCK=$agent
-    esac
-elif [ -S $agent ]; then
-    export SSH_AUTH_SOCK=$agent
-else
-    echo "no ssh-agent"
-fi
 
 PS1="\\[\\e[32m\\][\\u@\\h \\w]\\[\\e[0m\\]\\n\\$ "

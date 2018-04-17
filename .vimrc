@@ -73,7 +73,9 @@ NeoBundle 'jremmen/vim-ripgrep'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'plytophogy/vim-virtualenv'
 NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'kevinw/pyflakes-vim'
+NeoBundle 'w0rp/ale'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'Mizuchi/vim-ranger'
 call neobundle#end()
 
 """"""""""""""""""""""""""""""
@@ -103,32 +105,6 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
-""""""""""""""""""""""""""""""
-" clang_format property
-""""""""""""""""""""""""""""""
-let g:clang_format#code_style = 'WebKit'
-
-let g:clang_format#detect_style_file = 0
-
-let g:clang_format#command = 'Q:/umezawa/bin/clang-format.exe'
-
-let g:clang_format#style_options = {
-            \ 'IndentWidth' : '4',
-            \ 'ColumnLimit' : '80',
-            \ 'AlignAfterOpenBracket' : 'false',
-            \ 'AllowAllParametersOfDeclarationOnNextLine' : 'false',
-            \ 'AllowShortFunctionsOnASingleLine' : 'None',
-            \ 'BreakConstructorInitializersBeforeComma' : 'false',
-            \ 'ConstructorInitializerAllOnOneLineOrOnePerLine' : 'false',
-            \ 'ConstructorInitializerIndentWidth' : 0,
-            \ 'KeepEmptyLinesAtTheStartOfBlocks' : 'false',
-            \ 'NamespaceIndentation' : 'All',
-            \ 'TabWidth' : 4,
-            \ 'Standard' : 'C++11',
-            \ }
-autocmd FileType c,cpp,objc vnoremap <C-K><C-F> :ClangFormat<CR>
-autocmd FileType c,cpp,objc nnoremap <C-K><C-F> :ClangFormat<CR>
 
 """"""""""""""""""""""""""""""
 " neocomplcache property
@@ -175,11 +151,6 @@ let g:rsenseUseOmniFunc = 1
 " rust setting
 """"""""""""""""""""""""""""""
 let g:rustfmt_autosave = 1 
-
-""""""""""""""""""""""""""""""
-" pyflakes-vim settings
-""""""""""""""""""""""""""""""
-let g:pyflakes_use_quickfix = 0
 
 filetype plugin indent on     " required!
 filetype indent on
