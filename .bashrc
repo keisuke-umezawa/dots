@@ -29,6 +29,9 @@ alias dstat-cpu='dstat -Tclr'
 alias dstat-net='dstat -Tclnd'
 alias dstat-disk='dstat -Tcldr'
 
+# for docker
+alias docker-kill-all='docker ps -q | xargs docker stop | xargs docker rm'
+
 # git completion
 if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
