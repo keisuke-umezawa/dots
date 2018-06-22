@@ -39,3 +39,6 @@ elif [ -S $agent ]; then
 else
     echo "no ssh-agent"
 fi
+
+# for python
+export PYTHONPATH=~/dev/alpaca/forecast/python/lib/

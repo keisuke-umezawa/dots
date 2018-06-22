@@ -1,0 +1,13 @@
+# This is Git's per-user configuration file.
+[user]
+name = keisuke-umezawa
+email = keisuke.umezawa@gmail.com
+[help]
+	autocorrect = 1
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lga = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative

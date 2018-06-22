@@ -152,6 +152,12 @@ let g:rsenseUseOmniFunc = 1
 """"""""""""""""""""""""""""""
 let g:rustfmt_autosave = 1 
 
+""""""""""""""""""""""""""""""
+" supertab setting
+""""""""""""""""""""""""""""""
+let g:SuperTabContextDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 filetype plugin indent on     " required!
 filetype indent on
 syntax on

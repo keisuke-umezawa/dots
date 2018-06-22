@@ -1,4 +1,3 @@
-export PS1="[\u@\h \w]\n\\$ "
 # alias
 case "${OSTYPE}" in
 darwin*)
@@ -31,6 +30,9 @@ alias dstat-disk='dstat -Tcldr'
 
 # for docker
 alias docker-kill-all='docker ps -q | xargs docker stop | xargs docker rm'
+
+# for rsync
+alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-2:dev/ --exclude='.python-version' --exclude='.git'"
 
 # git completion
 if [ -f ~/.git-completion.bash ]; then
