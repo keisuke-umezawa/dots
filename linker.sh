@@ -9,15 +9,21 @@ ln -sf ${DOTFILES_DIR}/.bashrc ~/.bashrc
 ln -sf ${DOTFILES_DIR}/.profile ~/.profile
 ln -sf ${DOTFILES_DIR}/.tmux.conf ~/.tmux.conf
 ln -sf ${DOTFILES_DIR}/.gitconfig ~/.gitconfig
+ln -sf ${DOTFILES_DIR}/.zshrc ~/.zshrc
+ln -sf ${DOTFILES_DIR}/.vimrc ~/.vimrc
+
+# zsh settings
+if [ ! -e ~/.zplug ]; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
 
 # vim settings
-ln -sf ${DOTFILES_DIR}/.vimrc ~/.vimrc
-if [ -e ~/.vim ]; then
-	rm -rf ~/.vim
+if [ ! -e ~/.vim ]; then
+    mkdir -p ~/.vim/bundle/
+    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
-mkdir -p ~/.vim/bundle/
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
+# bin setting
 if [ ! -e ~/bin ]; then
     mkdir -p ~/bin
 fi
