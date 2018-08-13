@@ -1,4 +1,3 @@
-# alias
 case "${OSTYPE}" in
 darwin*)
   alias ls="ls -G"
@@ -37,6 +36,20 @@ alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-2:dev/ --exc
 # git completion
 if [ -f ~/.git-completion.bash ]; then
 	. ~/.git-completion.bash
+fi
+
+# ~/bin
+BIN=$HOME/bin
+if [ -d "${BIN}" ]; then
+    export PATH=$PATH:$BIN
+fi
+
+# for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=$PYENV_ROOT/bin:$PATH
+    eval "$(pyenv init -)"
+    #eval "$(pyenv virtualenv-init -)"
 fi
 
 PS1="\\[\\e[32m\\][\\u@\\h \\w]\\[\\e[0m\\]\\n\\$ "
