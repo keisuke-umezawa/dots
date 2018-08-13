@@ -1,7 +1,21 @@
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=6000000
+SAVEHIST=6000000
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt share_history        # share command history data
+
+bindkey -e
+
+# history search
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
+
 # zplug
 source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # theme (https://github.com/sindresorhus/pure#zplug)　好みのスキーマをいれてくだされ。
+zplug "b4b4r07/enhancd", of:enhancd.sh
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 # 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
