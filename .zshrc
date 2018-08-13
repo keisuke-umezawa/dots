@@ -74,3 +74,17 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
     #eval "$(pyenv virtualenv-init -)"
 fi
+
+# chainerui
+function chainerui() {
+    docker run \
+    -v $(readlink -f $1):$(readlink -f $1) \
+    -p ${2:-5000}:5000 \
+    -d \
+    --rm \
+    --name ${2:-5000} \
+    -it chainer/chainerui:v0.4.0 \
+    bash -c \
+    "chainerui project create -d $(readlink -f $1);
+    chainerui server --host 0.0.0.0"
+}
