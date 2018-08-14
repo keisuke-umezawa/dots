@@ -14,14 +14,15 @@ bindkey '^N' history-beginning-search-forward
 # zplug
 source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-# theme (https://github.com/sindresorhus/pure#zplug)　好みのスキーマをいれてくだされ。
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
-# 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
+# highlight
 zplug "zsh-users/zsh-syntax-highlighting"
-# history関係
+# history
 zplug "zsh-users/zsh-history-substring-search"
-# タイプ補完
+# git alias
+zplug "plugins/git",   from:oh-my-zsh
+# complete typing
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "chrissicool/zsh-256color"
