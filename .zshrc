@@ -15,12 +15,6 @@ bindkey '^N' history-beginning-search-forward
 source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # theme (https://github.com/sindresorhus/pure#zplug)　好みのスキーマをいれてくだされ。
-zplug "junegunn/fzf-bin", \
-    as:command, \
-    rename-to:"fzf", \
-    from:gh-r, \
-    on:zplug "b4b4r07/enhancd", \
-    use:enhancd.sh
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 # 構文のハイライト(https://github.com/zsh-users/zsh-syntax-highlighting)
@@ -38,11 +32,9 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
+
 # Then, source plugins and add commands to $PATH
 zplug load 
-
-# zssh
-zssh() ssh "$@" -t zsh
 
 # alias
 case "${OSTYPE}" in
