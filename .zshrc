@@ -14,6 +14,7 @@ bindkey '^N' history-beginning-search-forward
 # zplug
 source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "b4b4r07/enhancd", use:init.sh
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 # highlight
