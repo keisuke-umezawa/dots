@@ -69,8 +69,6 @@ function chainerui() {
 PS1="\\[\\e[32m\\][\\u@\\h \\w]\\[\\e[0m\\]\\n\\$ "
 
 # reset ssh
-fix_ssh () {
+function fix_ssh() {
     eval $(tmux show-environment | grep ^SSH_AUTH_SOCK)
 }
-
-exec zsh

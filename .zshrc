@@ -85,7 +85,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
-    #eval "$(pyenv virtualenv-init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 # chainerui
@@ -100,4 +100,8 @@ function chainerui() {
     bash -c \
     "chainerui project create -d $(readlink -f $1);
     chainerui server --host 0.0.0.0"
+}
+
+function fix_ssh() {
+    eval $(tmux show-environment | grep ^SSH_AUTH_SOCK)
 }
