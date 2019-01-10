@@ -86,7 +86,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
-    #eval "$(pyenv virtualenv-init -)"
+    eval "$(pyenv virtualenv-init -)"
 fi
 
 # chainerui
@@ -106,6 +106,10 @@ function chainerui() {
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+
+function fix_ssh() {
+    eval $(tmux show-environment | grep ^SSH_AUTH_SOCK)
+}
 
 # for mac
 # export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}

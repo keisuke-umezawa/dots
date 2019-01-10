@@ -72,6 +72,11 @@ export PATH=$PATH:$GOPATH/bin
 
 PS1="\\[\\e[32m\\][\\u@\\h \\w]\\[\\e[0m\\]\\n\\$ "
 
+# reset ssh
+function fix_ssh() {
+    eval $(tmux show-environment | grep ^SSH_AUTH_SOCK)
+}
+
 # for mac
 # export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
 # export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
