@@ -31,7 +31,7 @@ alias dstat-disk='dstat -Tcldr'
 alias docker-kill-all='docker ps -q | xargs docker stop | xargs docker rm'
 
 # for rsync
-alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-2:dev/ --exclude='.python-version' --exclude='.git'"
+alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-0:dev/ --exclude='.python-version' --exclude='.git'"
 
 # git completion
 if [ -f ~/.git-completion.bash ]; then
@@ -66,5 +66,12 @@ function chainerui() {
     chainerui server --host 0.0.0.0"
 }
 
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 PS1="\\[\\e[32m\\][\\u@\\h \\w]\\[\\e[0m\\]\\n\\$ "
 
+# for mac
+# export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+# export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}

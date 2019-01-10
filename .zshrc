@@ -72,7 +72,8 @@ alias dstat-disk='dstat -Tcldr'
 alias docker-kill-all='docker ps -q | xargs docker stop | xargs docker rm'
 
 # for rsync
-alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-2:dev/ --exclude='.python-version' --exclude='.git'"
+alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-0:dev/ --exclude='.python-version' --exclude='.git'"
+alias rsync-ni="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nis-6:dev/ --exclude='.python-version' --exclude='.git'"
 
 # ~/bin
 BIN=$HOME/bin
@@ -101,3 +102,11 @@ function chainerui() {
     "chainerui project create -d $(readlink -f $1);
     chainerui server --host 0.0.0.0"
 }
+
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# for mac
+# export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+# export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
