@@ -72,8 +72,8 @@ alias dstat-disk='dstat -Tcldr'
 alias docker-kill-all='docker ps -q | xargs docker stop | xargs docker rm'
 
 # for rsync
-alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-0:dev/ --exclude='.python-version' --exclude='.git'"
-alias rsync-ni="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nis-6:dev/ --exclude='.python-version' --exclude='.git'"
+alias rsync-nv="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nv-1:dev/ --exclude='.python-version' --exclude='.git'"
+alias rsync-ni="rsync -auvz -e ssh ~/dev/alpaca/ keisuke-umezawa@nishiya:dev/ --exclude='.python-version' --exclude='.git'"
 
 # ~/bin
 BIN=$HOME/bin
@@ -86,7 +86,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
     export PATH=$PYENV_ROOT/bin:$PATH
     eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+    # eval "$(pyenv virtualenv-init -)"
 fi
 
 # chainerui
@@ -111,6 +111,8 @@ function fix_ssh() {
     eval $(tmux show-environment | grep ^SSH_AUTH_SOCK)
 }
 
-# for mac
-# export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
-# export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
+# rust
+export PATH=$PATH:~/.cargo/bin
+
+# node.js
+export PATH=$PATH:$HOME/.nodebrew/current/bin
