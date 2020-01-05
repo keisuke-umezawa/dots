@@ -22,6 +22,12 @@ if [ ! -e ~/.vim ]; then
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 
+# dein settings
+if [ ! -e ~/.cache/dein ]; then
+    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+    sh ./installer.sh ~/.cache/dein
+fi
+
 # bin setting
 if [ ! -e ~/bin ]; then
     mkdir -p ~/bin

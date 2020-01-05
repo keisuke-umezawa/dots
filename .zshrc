@@ -58,6 +58,9 @@ alias egrep='egrep --color=auto'
 
 alias vi='vim'
 
+# For gcc
+alias gcc='/usr/local/bin/gcc'
+
 # for debug
 alias objdump='objdump -M'
 
@@ -116,3 +119,9 @@ export PATH=$PATH:~/.cargo/bin
 
 # node.js
 export PATH=$PATH:$HOME/.nodebrew/current/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/k-umezawa/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/k-umezawa/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/k-umezawa/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/k-umezawa/google-cloud-sdk/completion.zsh.inc'; fi
