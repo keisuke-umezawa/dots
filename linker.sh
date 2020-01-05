@@ -16,16 +16,14 @@ if [ ! -e ~/.zplug ]; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 fi
 
-# vim settings
-if [ ! -e ~/.vim ]; then
-    mkdir -p ~/.vim/bundle/
-    git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-fi
-
 # dein settings
 if [ ! -e ~/.cache/dein ]; then
     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
     sh ./installer.sh ~/.cache/dein
+    mkdir ~/.cache/dein/config
+    ln -sf ${DOTFILES_DIR}/dein.toml ~/.cache/dein/config/dein.toml
+    ln -sf ${DOTFILES_DIR}/dein_lazy.toml ~/.cache/dein/config/dein_lazy.toml
+    rm ./installer.sh
 fi
 
 # bin setting
