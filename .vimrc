@@ -14,7 +14,6 @@ set title
 set ruler
 set showmode
 set smartindent
-set clipboard=unnamed,autoselect
 let lisp_rainbow=1
 set number
 set backspace=indent,eol,start
